@@ -1,1 +1,25 @@
 /*** Variables ***/
+
+// Colours
+$white			: #FFF;
+$gray			: #e8e8e8;
+$black			:	#000;
+
+$pink			: #a84768;
+$blue			: #02163d;
+$christalle		: #27205c;
+$blackberry		: #46183E;
+$purple			: #3c1f51;
+$brown			: #372828;
+
+$grad1			: #5d1a42;
+$grad2			: #ac0b40;
+$grad3			: #c02340;
+$gradient		: $grad1 0%, $grad2 75%, $grad3 100%;
+
+// Typography
+$main-font		: "montserrat", Helvetica, Arial, sans-serif;
+$header-color	: $white;
+$text-color		: rgba($white, 0.5);
+$link-color		: $pink;
+$link-hover		: darken($pink, 10%);

@@ -1,6 +1,193 @@
 /*** Base Mobile Stylesheet ***/
 
 html {
-	font-size: 10px;
+	font-size: 10px !important;
 }
 
+body {
+	font-family: $main-font;
+	@include font-size(1.6);
+	font-weight: 700;
+	@include line-height(1.8);
+	color: $text-color;
+	background-color: $blue;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/** Links **/
+a {
+	color: $link-color;
+	text-decoration: none;
+
+	&:hover, &:focus {
+		color: $link-hover;
+		text-decoration: underline;
+	}
+
+	&:active {}
+
+	// mobile tap color
+	&:link {
+		-webkit-tap-highlight-color : $link-hover;
+	}
+}
+
+/** Paragraphs **/
+p {
+	@include font-size(1.6);
+	@include line-height(1.8);
+	@include margin(0, 0, 1.8, 0);
+}
+
+/** Headlines **/
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+	text-rendering: optimizelegibility;
+	font-weight: 900;
+	line-height: 1;
+	@include margin(2, 0, 2, 0);
+	padding: 0;
+
+	a {
+		text-decoration: none;
+	}
+}
+
+h1, .h1 {
+	@include font-size(5);
+	@include line-height(4);
+}
+
+h2, .h2 {
+	@include font-size(3.6);
+	@include line-height(3.4);
+}
+
+h3, .h3 {
+	@include font-size(2.8);
+	@include line-height(2.8);
+}
+
+h4, .h4 {
+	@include font-size(1.8);
+	@include line-height(1.6);
+}
+
+h5, .h5 {
+	@include font-size(1.6);
+	@include line-height(1.6);
+}
+
+/** Content Wrapping **/
+.wrap {
+	@include max-width(96); // Must move this to the desktop breakpoint
+	width: 96%;
+	margin: 0 auto;
+}
+
+/** Main Styles **/
+.main-section {
+	display: flex;
+	align-items: center;
+	min-height: 100vh;
+	text-align: center;
+}
+
+.main-header {
+
+	.main-image {
+		background: linear-gradient(150deg, $gradient);
+		@include width(48);
+		@include height(48);
+		margin: 0 auto;
+		@include margin-bottom(-4.8);
+		border-radius: 50%;
+
+		img, .svg {
+			@include width(30);
+			@include height(30);
+			@include margin(9, 9, 9, 9);
+		}
+	}
+
+	.main-title {
+		text-transform: uppercase;
+		color: $header-color;
+	}
+}
+
+.main-content {
+	margin: 0 auto;
+}
+
+/** Page Styles **/
+
+#page1 {
+	background-color: $blue;
+
+	.main-header {
+		.svg path {
+			fill: $blue;
+		}
+	}
+
+	.main-content {
+		max-width: 480px;
+	}
+}
+
+#page2 {
+	background-color: $christalle;
+
+	.main-header {
+		.svg path {
+			fill: $christalle;
+		}
+	}
+
+	.main-content {
+		max-width: 480px;
+	}
+}
+
+#page3 {
+	background-color: $blackberry;
+
+	.main-header {
+		.svg path {
+			fill: $blackberry;
+		}
+	}
+
+	.main-content {
+		max-width: 500px;
+	}
+}
+
+#page4 {
+	background-color: $purple;
+
+	.main-header {
+		.svg path {
+			fill: $purple;
+		}
+	}
+
+	.main-content {
+		max-width: 500px;
+	}
+}
+
+#page5 {
+	background-color: $brown;
+
+	.main-header {
+		.svg path {
+			fill: $brown;
+		}
+	}
+
+	.main-content {
+		max-width: 550px;
+	}
+}

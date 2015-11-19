@@ -1,90 +1,115 @@
 /*** Mixins ***/
 
+/** Font size & Line height for rem **/
+// font-size: value
 @mixin font-size($sizeValue: 1.6) {
 	font-size: ($sizeValue * 10) + px;
 	font-size: $sizeValue + rem;
 }
+// line-height: value
 @mixin line-height($sizeValue: 1.6) {
 	line-height: ($sizeValue * 10) + px;
 	line-height: $sizeValue + rem;
 }
+
+/** Height & Width mixins for rem **/
+// height: value
 @mixin height($sizeValue: 1.6) {
 	height: ($sizeValue * 10) + px;
 	height: $sizeValue + rem;
 }
+// width: value
 @mixin width($sizeValue: 1.6) {
 	width: ($sizeValue * 10) + px;
 	width: $sizeValue + rem;
 }
+// max-width: value
 @mixin max-width($sizeValue: 1.6) {
 	max-width: ($sizeValue * 10) + px;
 	max-width: $sizeValue + rem;
 }
+
+/** Positioning mixins for rem **/
+// top: value
 @mixin top($sizeValue: 1.6) {
 	top: ($sizeValue * 10) + px;
 	top: $sizeValue + rem;
 }
+// left: value
 @mixin left($sizeValue: 1.6) {
 	left: ($sizeValue * 10) + px;
 	left: $sizeValue + rem;
 }
+// bottom: value
 @mixin bottom($sizeValue: 1.6) {
 	bottom: ($sizeValue * 10) + px;
 	bottom: $sizeValue + rem;
 }
+// right: value
 @mixin right($sizeValue: 1.6) {
 	right: ($sizeValue * 10) + px;
 	right: $sizeValue + rem;
 }
+
+/** Margin mixins for rem **/
+// margin-top: value
 @mixin margin-top($sizeValue: 1.6) {
 	margin-top: ($sizeValue * 10) + px;
 	margin-top: $sizeValue + rem;
 }
+// margin-right: value
 @mixin margin-right($sizeValue: 1.6) {
 	margin-right: ($sizeValue * 10) + px;
 	margin-right: $sizeValue + rem;
 }
-
+// margin-bottom: value
 @mixin margin-bottom($sizeValue: 1.6) {
 	margin-bottom: ($sizeValue * 10) + px;
 	margin-bottom: $sizeValue + rem;
 }
+// margin-left: value
 @mixin margin-left($sizeValue: 1.6) {
 	margin-left: ($sizeValue * 10) + px;
 	margin-left: $sizeValue + rem;
 }
+// margin: top right bottom left
 @mixin margin($t, $r, $b, $l) {
 	@include margin-top($t);
 	@include margin-right($r);
 	@include margin-bottom($b);
 	@include margin-left($l);
 }
-@mixin padding-left($sizeValue: 1.6) {
-	padding-left: ($sizeValue * 10) + px;
-	padding-left: $sizeValue + rem;
-}
+
+/** Padding mixins for rem **/
+// padding-top: value
 @mixin padding-top($sizeValue: 1.6) {
 	padding-top: ($sizeValue * 10) + px;
 	padding-top: $sizeValue + rem;
 }
+// padding-right: value
 @mixin padding-right($sizeValue: 1.6) {
 	padding-right: ($sizeValue * 10) + px;
 	padding-right: $sizeValue + rem;
 }
+// padding-bottom: value
 @mixin padding-bottom($sizeValue: 1.6) {
 	padding-bottom: ($sizeValue * 10) + px;
 	padding-bottom: $sizeValue + rem;
 }
+// padding-left: value
 @mixin padding-left($sizeValue: 1.6) {
 	padding-left: ($sizeValue * 10) + px;
 	padding-left: $sizeValue + rem;
 }
+// padding: top right bottom left
 @mixin padding($t, $r, $b, $l) {
 	@include padding-top($t);
 	@include padding-right($r);
 	@include padding-bottom($b);
 	@include padding-left($l);
 }
+
+
 @mixin background-size($w: 1.6, $h: 1.6) {
 	background-size: ($w * 10) + px ($h * 10) + px;
 	background-size: $w + rem $h + rem;
