@@ -78,11 +78,104 @@ h5, .h5 {
 	@include line-height(1.6);
 }
 
+/** Navigation **/
+.nav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		display: inline-block;
+		padding: 0 11px;
+		@include padding(0, 1.1, 0, 1.1);
+
+		a {
+			color: rgba($white, 0.4);
+			@include padding(0.4, 0.4, 0.4, 0.4);
+			transition: color 0.2s ease-in;
+
+			&:hover, &:focus {
+				color: rgba($white, 0.8);
+				text-decoration: none;
+			}
+		}
+
+		&:first-child {
+			padding-left: 0;
+		}
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+}
+
 /** Content Wrapping **/
 .wrap {
 	@include max-width(96); // Must move this to the desktop breakpoint
 	width: 96%;
 	margin: 0 auto;
+}
+
+/** Header Styles **/
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	@include padding(4, 5, 4, 5);
+	z-index: 0;
+	opacity: 0;
+	transition: opacity 0.2s ease-in, z-index 0.01s linear, background-color 0.2s ease-in;
+
+	#logo {
+		float: left;
+		display: block;
+
+		svg {
+			display: block;
+			@include width(18.8);
+			@include height(3.5);
+
+			path {
+				fill: rgba($white, 0.4);
+				transition: fill 0.2s ease-in;
+			}
+		}
+
+		&:hover, &:focus {
+			.svg {
+				path {
+					fill: rgba($white, 0.8);
+				}
+			}
+		}
+	}
+
+	#main-nav {
+		float: right;
+		@include padding(0.9, 0, 0.8, 0);
+	}
+
+	&.appear {
+		z-index: 100;
+		opacity: 1;
+	}
+
+	&.bg-blue {
+		background-color: $blue;
+	}
+	&.bg-christalle {
+		background-color: $christalle;
+	}
+	&.bg-blackberry {
+		background-color: $blackberry;
+	}
+	&.bg-purple {
+		background-color: $purple;
+	}
+	&.bg-brown {
+		background-color: $brown;
+	}
 }
 
 /** Main Styles **/
@@ -91,6 +184,10 @@ h5, .h5 {
 	align-items: center;
 	min-height: 100vh;
 	text-align: center;
+	overflow-x: hidden;
+	@include padding(4, 0, 4, 0);
+	position: relative;
+	z-index: 10;
 }
 
 .main-header {
@@ -103,7 +200,7 @@ h5, .h5 {
 		@include margin-bottom(-4.8);
 		border-radius: 50%;
 
-		img, .svg {
+		svg {
 			@include width(30);
 			@include height(30);
 			@include margin(9, 9, 9, 9);
@@ -120,13 +217,55 @@ h5, .h5 {
 	margin: 0 auto;
 }
 
+.main-actions {
+
+}
+
 /** Page Styles **/
+
+#intro {
+	background: linear-gradient(330deg, $gradient);
+	color: $peach;
+
+	.main-header {
+
+		#brand {
+			background-image: url("../img/brand-under.png");
+			background-position: center top;
+			background-repeat: no-repeat;
+			@include background-size(53.5, 10);
+
+			svg {
+				@include height(10);
+
+				path {
+					fill: $peach;
+				}
+			}
+		}
+
+		#slogan {
+			text-transform: uppercase;
+		}
+	}
+
+	.main-content {
+		max-width: 480px;
+
+		p {
+			font-weight: 900;
+			@include font-size(1.6);
+			@include line-height(1.6);
+			text-transform: uppercase;
+		}
+	}
+}
 
 #page1 {
 	background-color: $blue;
 
 	.main-header {
-		.svg path {
+		svg path {
 			fill: $blue;
 		}
 	}
@@ -140,7 +279,7 @@ h5, .h5 {
 	background-color: $christalle;
 
 	.main-header {
-		.svg path {
+		svg path {
 			fill: $christalle;
 		}
 	}
@@ -154,7 +293,7 @@ h5, .h5 {
 	background-color: $blackberry;
 
 	.main-header {
-		.svg path {
+		svg path {
 			fill: $blackberry;
 		}
 	}
@@ -168,7 +307,7 @@ h5, .h5 {
 	background-color: $purple;
 
 	.main-header {
-		.svg path {
+		svg path {
 			fill: $purple;
 		}
 	}
@@ -182,12 +321,42 @@ h5, .h5 {
 	background-color: $brown;
 
 	.main-header {
-		.svg path {
+		svg path {
 			fill: $brown;
 		}
 	}
 
 	.main-content {
 		max-width: 550px;
+	}
+}
+
+/** Footer Style **/
+#footer {
+	background: url("../img/dot.svg") center top repeat-y, linear-gradient(150deg, $gradient);
+
+	.footer-link {
+		display: block;
+		width: 50%;
+		margin: 0;
+		@include padding(5.4, 3, 5.4, 3);
+		color: $peach;
+		text-transform: uppercase;
+		transition: color 0.2s ease-in;
+
+		&:hover, &:focus {
+			text-decoration: none;
+			color: $white;
+		}
+	}
+
+	.footer-left {
+		float: left;
+		text-align: right;
+	}
+
+	.footer-right {
+		float: right;
+		text-align: left;
 	}
 }

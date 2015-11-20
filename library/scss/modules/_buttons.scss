@@ -1,1 +1,43 @@
 /*** Buttons Stylesheet ***/
+
+/** Default Button **/
+%btn {
+	display: inline-block;
+	background-color: transparent;
+	position: relative;
+	font-family: $main-font;
+	text-decoration: none;
+	@include line-height(1.4);
+	font-weight: 900;
+	@include line-height(1.4);
+	margin: 0;
+	@include padding(2, 2, 2, 2);
+	border-radius: 6px;
+	border: 2px solid transparent;
+	cursor: pointer;
+	transition: all 0.2s ease-in;
+
+	&:hover, &:focus {
+		text-decoration: none;
+		outline: none;
+	}
+
+	// clicking on the button
+	&:active {
+		top: 1px;
+	}
+}
+
+/** Outlined Button **/
+.outlined-btn {
+	@extend %btn;
+	border-color: $pink;
+	color: $pink;
+	text-transform: uppercase;
+	text-align: center;
+
+	&:hover, &:focus {
+		background-color: $pink;
+		color: $peach;
+	}
+}

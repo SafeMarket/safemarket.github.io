@@ -1,34 +1,69 @@
-function replaceImgWithSvg() {
-	$('img.svg').each(function(){
-		var $img = $(this);
-		var imgID = $img.attr('id');
-		var imgClass = $img.attr('class');
-		var imgURL = $img.attr('src');
 
-		$.get(imgURL, function(data) {
-			// Get the SVG tag, ignore the rest
-			var $svg = $(data).find('svg');
-
-			// Add replaced image's ID to the new SVG
-			if(typeof imgID !== 'undefined') {
-				$svg = $svg.attr('id', imgID);
-			}
-			// Add replaced image's classes to the new SVG
-			if(typeof imgClass !== 'undefined') {
-				$svg = $svg.attr('class', imgClass+' replaced-svg');
-			}
-
-			// Remove any invalid XML tags as per http://validator.w3.org
-			$svg = $svg.removeAttr('xmlns:a');
-
-			// Replace image with new SVG
-			$img.replaceWith($svg);
-
-		}, 'xml');
-	});
-}
 
 $(function() {
+	var $header = $('#header');
+	var $intro = $('#intro');
+	var $page1 = $('#page1');
+	var $page2 = $('#page2');
+	var $page3 = $('#page3');
+	var $page4 = $('#page4');
+	var $page5 = $('#page5');
 
-	replaceImgWithSvg();
+	$page1.waypoint(function(direction) {
+		if (direction === "down") {
+			$header.addClass('appear bg-blue');
+		} else {
+			$header.removeClass('appear bg-blue');
+		}
+	}, {
+		offset: $header.outerHeight(),
+	});
+
+	$page2.waypoint(function(direction) {
+		if (direction === "down") {
+			$header.removeClass('bg-blue');
+			$header.addClass('bg-christalle');
+		} else {
+			$header.removeClass('bg-christalle');
+			$header.addClass('bg-blue');
+		}
+	}, {
+		offset: $header.outerHeight(),
+	});
+
+	$page3.waypoint(function(direction) {
+		if (direction === "down") {
+			$header.removeClass('bg-christalle');
+			$header.addClass('bg-blackberry');
+		} else {
+			$header.removeClass('bg-blackberry');
+			$header.addClass('bg-christalle');
+		}
+	}, {
+		offset: $header.outerHeight(),
+	});
+
+	$page4.waypoint(function(direction) {
+		if (direction === "down") {
+			$header.removeClass('bg-blackberry');
+			$header.addClass('bg-purple');
+		} else {
+			$header.addClass('bg-blackberry');
+			$header.removeClass('bg-purple');
+		}
+	}, {
+		offset: $header.outerHeight(),
+	});
+
+	$page5.waypoint(function(direction) {
+		if (direction === "down") {
+			$header.removeClass('bg-purple');
+			$header.addClass('bg-brown');
+		} else {
+			$header.removeClass('bg-brown');
+			$header.addClass('bg-purple');
+		}
+	}, {
+		offset: $header.outerHeight(),
+	});
 });
