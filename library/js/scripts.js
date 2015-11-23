@@ -15,8 +15,13 @@ $(function() {
 			window.clearTimeout(window.resizeEvent);
 			window.resizeEvent = window.setTimeout(function () {
 				placeDots();
-			}, 0);
-			$('.dot').slideDown();
+			}, 10);
+
+			if (windowWidth <= 800 && $bulletNav.is(':visible')) {
+				$bulletNav.hide();
+			} else if(window.scrollY >= $page1.offset().top) {
+				$bulletNav.show();
+			}
 
 			windowWidth = $(window).width();
 		}
@@ -89,18 +94,17 @@ $(function() {
 		$('html, body').animate({
 			scrollTop: scrollTo,
 		}, 1000);
-
-
 	});
 
-	var i = -1;
+	var i = 0;
+	// Init the active bullet
+	updateBulletNav(i);
+
 	$intro.waypoint(function(direction) {
 		if (direction === "down") {
 			$header.css('display', 'block');
-			updateBulletNav(++i);
 		} else {
 			$header.css('display', 'none');
-			updateBulletNav(--i);
 		}
 	}, {
 		offset: -100
@@ -109,6 +113,9 @@ $(function() {
 	$page1.waypoint(function(direction) {
 		if (direction === "down") {
 			$header.addClass('appear bg-blue');
+			if (windowWidth >= 800) {
+				$bulletNav.show();
+			}
 			updateBulletNav(++i);
 		} else {
 			$header.removeClass('appear bg-blue');
@@ -116,6 +123,10 @@ $(function() {
 				window.setTimeout(function() {
 					$mainNav.hide();
 				}, 200);
+			}
+
+			if (windowWidth >= 800) {
+				$bulletNav.fadeOut();
 			}
 			updateBulletNav(--i);
 		}

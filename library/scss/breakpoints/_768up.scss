@@ -10,12 +10,6 @@ p {
 	@include line-height(1.8);
 }
 
-.bullet-nav {
-	@media screen and (min-width: 880px) {
-		display: block;
-	}
-}
-
 /** Header Styles **/
 #header {
 	@include padding(4, 5, 4, 5);

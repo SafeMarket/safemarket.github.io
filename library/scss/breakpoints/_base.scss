@@ -399,9 +399,10 @@ h5, .h5 {
 
 .bullet-nav {
 	display: none;
-	position: absolute;
+	position: fixed;
 	@include right(5.6);
 	top: 0;
+	z-index: 40;
 	height: 100%;
 	width: 18px;
 
