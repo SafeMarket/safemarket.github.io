@@ -1,0 +1,56 @@
+/*** 481px & Up Stylesheet ***/
+
+html {
+	font-size: 8px;
+}
+
+/** Paragraphs **/
+p {
+	@include font-size(1.6);
+	@include line-height(1.8);
+}
+
+/** Header Styles **/
+#header {
+
+	#logo {
+		display: block;
+		@include height(4);
+	}
+
+	.nav-burger {
+		@include margin-top(0.8);
+	}
+}
+
+
+/** Page Styles **/
+#intro {
+
+	.main-actions {
+
+		.action {
+			@include font-size(1.4);
+			@include line-height(1.4);
+		}
+
+		#intro-action2 {
+			margin: 0 30px;
+
+			&:before,
+			&:after {
+				width: 30px;
+			}
+
+			&:before {
+				margin-left: -2px;
+				left: -30px;
+			}
+
+			&:after {
+				margin-right: -2px;
+				right: -30px;
+			}
+		}
+	}
+}

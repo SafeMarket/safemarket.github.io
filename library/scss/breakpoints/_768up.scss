@@ -1,0 +1,110 @@
+/*** 768px & Up Stylesheet ***/
+
+html {
+	font-size: 10px;
+}
+
+/** Paragraphs **/
+p {
+	@include font-size(1.6);
+	@include line-height(1.8);
+}
+
+.bullet-nav {
+	@media screen and (min-width: 880px) {
+		display: block;
+	}
+}
+
+/** Header Styles **/
+#header {
+	@include padding(4, 5, 4, 5);
+
+	#logo {
+
+		&:hover, &:focus {
+			svg {
+				path {
+					fill: rgba($white, 0.8);
+				}
+			}
+		}
+	}
+
+	#main-nav {
+		display: block;
+		float: right;
+		clear: none;
+		@include padding(0.9, 0, 0.8, 0);
+
+		.nav {
+
+			li {
+				display: inline-block;
+				border-bottom: none;
+				padding: 0 11px;
+
+				a {
+					@include padding(0.4, 0.4, 0.4, 0.4);
+				}
+			}
+		}
+	}
+
+	.nav-burger {
+		display: none;
+	}
+
+}
+
+/** Main Styles **/
+.main-section {
+	@include padding(5, 0, 5, 0);
+}
+
+/** Page Styles **/
+#intro {
+
+	.main-content {
+
+		p {
+			@include font-size(1.6);
+			@include line-height(1.6);
+		}
+	}
+
+	.main-actions {
+
+		#intro-action2 {
+			margin: 0 40px;
+
+			&:before,
+			&:after {
+				width: 40px;
+			}
+
+			&:before {
+				margin-left: -2px;
+				left: -40px;
+			}
+
+			&:after {
+				margin-right: -2px;
+				right: -40px;
+			}
+		}
+	}
+}
+
+/** Footer Style **/
+#footer {
+
+	.footer-link {
+
+		@media screen and (min-width: 1000px) {
+			svg {
+				display: block;
+			}
+		}
+	}
+}

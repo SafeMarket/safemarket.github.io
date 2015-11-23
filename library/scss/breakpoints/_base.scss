@@ -1,7 +1,7 @@
 /*** Base Mobile Stylesheet ***/
 
 html {
-	font-size: 10px !important;
+	font-size: 5px;
 }
 
 body {
@@ -35,8 +35,8 @@ a {
 
 /** Paragraphs **/
 p {
-	@include font-size(1.6);
-	@include line-height(1.8);
+	font-size: 14px;
+	line-height: 16px;
 	@include margin(0, 0, 1.8, 0);
 }
 
@@ -116,16 +116,95 @@ h5, .h5 {
 	margin: 0 auto;
 }
 
+/** Awesome Dots **/
+.dot {
+	position: absolute;
+	background-image: url("../img/dot-pink.svg");
+	background-position: center top;
+	background-repeat: repeat-y;
+	top: 0; // This needs to be calculated with JS
+	z-index: 30;
+	left: calc(50% - 2px);
+	width: 4px;
+}
+
+.dot-peach {
+	position: absolute;
+	background-image: url("../img/dot-peach.svg");
+	background-position: center top;
+	background-repeat: repeat-y;
+	top: -2px;
+	z-index: 30;
+	left: calc(50% - 2px);
+	width: 4px;
+	height: 100%;
+}
+
+.arrow {
+	position: relative;
+	height: 20px;
+	width: 2px;
+	margin: 0 auto;
+
+	.arrow-body {
+		display: block;
+		background-color: $pink;
+		position: absolute;
+		height: 100%;
+		left: 0;
+		width: 2px;
+		border-radius: 1px;
+		transition: height 0.2s linear;
+
+		&:after,
+		&:before {
+			content: '';
+			position: absolute;
+		}
+
+		&:before {
+			top: 0;
+			left: -1px;
+			height: 4px;
+			width: 4px;
+			border-radius: 2px;
+			background: $pink;
+		}
+
+		&:after {
+			bottom: 0;
+			left: -14px;
+			background: url("../img/arrow-top.svg") left bottom no-repeat;
+			width: 30px;
+			height: 17px;
+		}
+
+	}
+
+	&.arrow-image {
+		@include height(10.2);
+		@include margin-bottom(-5.8);
+	}
+
+	&.arrow-content {
+		margin-top: -4px;
+		@include height(12.5);
+	}
+}
+
 /** Header Styles **/
 #header {
 	position: fixed;
-	top: 0;
+	top: -100px;
 	left: 0;
 	width: 100%;
-	@include padding(4, 5, 4, 5);
-	z-index: 0;
-	opacity: 0;
-	transition: opacity 0.2s ease-in, z-index 0.01s linear, background-color 0.2s ease-in;
+	@include padding(3, 4, 3, 4);
+	@media only screen and (orientation: landscape) {
+		@include padding(2, 4, 2, 4);
+	}
+	z-index: 100;
+	transition: z-index 0.2s linear, background-color 0.2s linear,
+				top 0.2s linear, transform 0.2s linear;
 
 	#logo {
 		float: left;
@@ -133,61 +212,125 @@ h5, .h5 {
 
 		svg {
 			display: block;
-			@include width(18.8);
-			@include height(3.5);
+			height: 36px;
 
 			path {
 				fill: rgba($white, 0.4);
 				transition: fill 0.2s ease-in;
 			}
 		}
+	}
 
-		&:hover, &:focus {
-			.svg {
-				path {
-					fill: rgba($white, 0.8);
+	#main-nav {
+		display: none;
+		clear: both;
+		@include padding-top(3);
+
+		.nav {
+
+			li {
+				display: block;
+				text-align: center;
+				font-size: 14px;
+				line-height: 16px;
+				padding: 0;
+				//border-bottom: 1px solid rgba($white, 0.4);
+
+				a {
+					padding: 4px 0;
+					display: block;
 				}
 			}
 		}
 	}
 
-	#main-nav {
+	.nav-burger {
 		float: right;
-		@include padding(0.9, 0, 0.8, 0);
+		width: 30px;
+		cursor: pointer;
+		padding: 5px;
+		margin-top: 5px;
+
+		span {
+			background-color: rgba($white, 0.4);
+			display: block;
+			height: 2px;
+			width: 20px;
+			margin: 4px 0;
+			transition: all 0.2s ease-in;
+
+			&:first-child,
+			&:last-child {
+				margin: 0;
+			}
+		}
+
+		&.active {
+
+			span {
+				opacity: 0;
+
+				&:first-child,
+				&:last-child {
+					opacity: 1;
+				}
+
+				&:first-child {
+					transform: rotate(45deg) translateX(-1px);
+					transform-origin: 0 0;
+				}
+
+				&:last-child {
+					transform: rotate(-45deg) translateX(-1px);
+					transform-origin: 0 2px;
+				}
+			}
+		}
 	}
 
 	&.appear {
 		z-index: 100;
-		opacity: 1;
+		top: 0;
 	}
 
-	&.bg-blue {
-		background-color: $blue;
-	}
-	&.bg-christalle {
-		background-color: $christalle;
-	}
-	&.bg-blackberry {
-		background-color: $blackberry;
-	}
-	&.bg-purple {
-		background-color: $purple;
-	}
-	&.bg-brown {
-		background-color: $brown;
+	@media only screen and (max-width: 1200px) {
+
+		&.bg-blue {
+			background-color: rgba($blue, 0.9);
+		}
+		&.bg-christalle {
+			background-color: rgba($christalle, 0.9);
+		}
+		&.bg-blackberry {
+			background-color: rgba($blackberry, 0.9);
+		}
+		&.bg-purple {
+			background-color: rgba($purple, 0.9);
+		}
+		&.bg-brown {
+			background-color: rgba($brown, 0.9);
+		}
 	}
 }
 
 /** Main Styles **/
+#main {
+	position: relative;
+}
+
 .main-section {
 	display: flex;
 	align-items: center;
 	min-height: 100vh;
 	text-align: center;
 	overflow-x: hidden;
-	@include padding(4, 0, 4, 0);
+	@include padding(6, 0, 6, 0);
 	position: relative;
 	z-index: 10;
+
+	.wrap {
+		position: relative;
+	}
 }
 
 .main-header {
@@ -210,15 +353,99 @@ h5, .h5 {
 	.main-title {
 		text-transform: uppercase;
 		color: $header-color;
+		margin: 0;
+
+		&:after {
+			display: block;
+			content: '';
+			background-image: url("../img/dotsx3.svg");
+			background-repeat: no-repeat;
+			background-position: center top;
+			background-size: 24px 4px;
+			width: 24px;
+			height: 4px;
+			@include margin-top(1);
+			@include margin-bottom(1);
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 }
 
 .main-content {
+	@include max-width(48);
 	margin: 0 auto;
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	&:after {
+		display: block;
+		content: '';
+		background-image: url("../img/dotsx3.svg");
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-size: 24px 4px;
+		width: 24px;
+		height: 4px;
+		@include margin-top(1);
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
-.main-actions {
+.main-actions {}
 
+.bullet-nav {
+	display: none;
+	position: absolute;
+	@include right(5.6);
+	top: 0;
+	height: 100%;
+	width: 18px;
+
+	ul {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 18px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			display: block;
+			width: 18px;
+			height: 18px;
+			padding: 6px;
+			margin: 20px 0;
+			cursor: pointer;
+			background-image: none;
+			background-position: left top;
+			background-repeat: no-repeat;
+			background-size: 18px 18px;
+			transition: background-image 0.2s ease-in;
+
+			span {
+				opacity: 0.5;
+				display: block;
+				width: 6px;
+				height: 6px;
+				border-radius: 3px;
+				background-color: $pink;
+				transition: all 0.2s ease-in;
+			}
+
+			&.active {
+				background-image: url("../img/bullet-hover.svg");
+
+				span {
+					opacity: 0.7;
+				}
+			}
+		}
+	}
 }
 
 /** Page Styles **/
@@ -246,18 +473,95 @@ h5, .h5 {
 
 		#slogan {
 			text-transform: uppercase;
+			@include margin-top(1.4);
+			margin-bottom: 0;
+
+			&:after {
+				display: block;
+				content: '';
+				background-image: url("../img/dotsx3.svg");
+				background-repeat: no-repeat;
+				background-position: center top;
+				background-size: 24px 4px;
+				width: 24px;
+				height: 4px;
+				@include margin-top(1.8);
+				margin-left: auto;
+				margin-right: auto;
+			}
 		}
 	}
 
 	.main-content {
-		max-width: 480px;
 
 		p {
 			font-weight: 900;
-			@include font-size(1.6);
-			@include line-height(1.6);
+			font-size: 16px;
+			line-height: 16px;
 			text-transform: uppercase;
 		}
+	}
+
+	.main-actions {
+		display: flex;
+		justify-content: center;
+
+		.action {
+			font-size: 10px;
+			line-height: 10px;
+		}
+
+		#intro-action2 {
+			position: relative;
+			margin: 0 20px;
+
+			&:before,
+			&:after {
+				content: '';
+				position: absolute;
+				top: calc(50% - 2px);
+				height: 4px;
+				width: 20px;
+				background-image: url("../img/h-dot-pink.svg");
+				background-repeat: repeat-x;
+				background-position: -2px center;
+			}
+
+			&:before {
+				margin-left: -2px;
+				left: -20px;
+			}
+
+			&:after {
+				margin-right: -2px;
+				right: -20px;
+			}
+		}
+	}
+
+	#intro-arrow1 {
+		margin-top: -4px;
+		@include margin-bottom(1.8);
+		@include height(14);
+	}
+
+	#intro-arrow2 {
+		margin-top: -4px;
+		margin-bottom: -2px;
+		@include height(16);
+
+		.arrow-body:after {
+			background: $pink;
+			left: -1px;
+			width: 4px;
+			height: 4px;
+			border-radius: 2px;
+		}
+	}
+
+	#intro-arrow3 {
+		margin-top: -2px;
+		height: 50px;
 	}
 }
 
@@ -270,9 +574,7 @@ h5, .h5 {
 		}
 	}
 
-	.main-content {
-		max-width: 480px;
-	}
+	.main-content {}
 }
 
 #page2 {
@@ -284,9 +586,7 @@ h5, .h5 {
 		}
 	}
 
-	.main-content {
-		max-width: 480px;
-	}
+	.main-content {}
 }
 
 #page3 {
@@ -299,7 +599,7 @@ h5, .h5 {
 	}
 
 	.main-content {
-		max-width: 500px;
+		@include max-width(50);
 	}
 }
 
@@ -313,7 +613,7 @@ h5, .h5 {
 	}
 
 	.main-content {
-		max-width: 500px;
+		@include max-width(50);
 	}
 }
 
@@ -327,16 +627,19 @@ h5, .h5 {
 	}
 
 	.main-content {
-		max-width: 550px;
+		@include max-width(55);
 	}
 }
 
 /** Footer Style **/
 #footer {
-	background: url("../img/dot.svg") center top repeat-y, linear-gradient(150deg, $gradient);
+	background: linear-gradient(150deg, $gradient);
+	position: relative;
+	transition: transform 0.2s linear;
 
 	.footer-link {
 		display: block;
+		position: relative;
 		width: 50%;
 		margin: 0;
 		@include padding(5.4, 3, 5.4, 3);
@@ -344,19 +647,43 @@ h5, .h5 {
 		text-transform: uppercase;
 		transition: color 0.2s ease-in;
 
+		svg {
+			display: none;
+			position: absolute;
+			top: calc(50% - 1.6rem);
+			@include height(3);
+
+			path {
+				fill: $peach;
+				transition: fill 0.2s ease-in;
+			}
+		}
+
 		&:hover, &:focus {
 			text-decoration: none;
 			color: $white;
+
+			svg path {
+				fill: $white;
+			}
 		}
 	}
 
 	.footer-left {
 		float: left;
 		text-align: right;
+
+		svg {
+			@include right(34);
+		}
 	}
 
 	.footer-right {
 		float: right;
 		text-align: left;
+
+		svg {
+			@include left(34);
+		}
 	}
 }

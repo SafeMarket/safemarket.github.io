@@ -18,3 +18,13 @@
 
 // Base start
 @import "breakpoints/base";
+
+// Larger Mobile & Up
+@media only screen and (min-width: 481px) {
+	@import "breakpoints/481up";
+}
+
+// Tablet & Up
+@media only screen and (min-width: 768px) {
+	@import "breakpoints/768up";
+}
