@@ -454,11 +454,17 @@ h5, .h5 {
 #intro {
 	background: linear-gradient(330deg, $gradient);
 	color: $peach;
+	padding-top: 180px;
 
 	.main-header {
 
+		#welcome{
+			text-transform: uppercase;
+			margin-bottom: 8px;
+		}
+
 		#brand {
-			background-image: url("../img/brand-under.png");
+			// background-image: url("../img/brand-under.png");
 			background-position: center top;
 			background-repeat: no-repeat;
 			@include background-size(53.5, 10);
