@@ -96,6 +96,12 @@ $(function() {
 		}, 1000);
 	});
 
+	$('#intro-action2').click(function() {
+		$('html, body').animate({
+			scrollTop: $page1.offset().top - $header.height()
+		}, 1000)
+	});
+
 	var i = 0;
 	// Init the active bullet
 	updateBulletNav(i);
