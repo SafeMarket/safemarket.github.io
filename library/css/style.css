@@ -800,8 +800,8 @@ h5, .h5 {
   height: 480px;
   height: 48rem;
   margin: 0 auto;
-  margin-bottom: -48px;
-  margin-bottom: -4.8rem;
+  margin-bottom: 10px;
+  margin-bottom: 1rem;
   border-radius: 50%; }
   .main-header .main-image svg {
     width: 300px;
