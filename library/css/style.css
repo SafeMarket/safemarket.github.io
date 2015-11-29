@@ -902,7 +902,7 @@ h5, .h5 {
 #intro {
   background: linear-gradient(330deg, #5d1a42 0%, #ac0b40 75%, #c02340 100%);
   color: #ecd7db;
-  padding-top: 180px; }
+  padding-top: 80px; }
   #intro .main-header #welcome {
     text-transform: uppercase;
     margin-bottom: 8px; }
