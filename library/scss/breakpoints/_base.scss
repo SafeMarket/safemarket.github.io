@@ -10,7 +10,7 @@ body {
 	font-weight: 700;
 	@include line-height(1.8);
 	color: $text-color;
-	background-color: $blue;
+	background-color: $light;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -90,12 +90,12 @@ h5, .h5 {
 		@include padding(0, 1.1, 0, 1.1);
 
 		a {
-			color: rgba($white, 0.4);
+			color: rgba($dark, 0.8);
 			@include padding(0.4, 0.4, 0.4, 0.4);
 			transition: color 0.2s ease-in;
 
 			&:hover, &:focus {
-				color: rgba($white, 0.8);
+				color: rgba($dark, 1);
 				text-decoration: none;
 			}
 		}
@@ -194,6 +194,7 @@ h5, .h5 {
 
 /** Header Styles **/
 #header {
+	color: $dark;
 	position: fixed;
 	top: -100px;
 	left: 0;
@@ -215,7 +216,7 @@ h5, .h5 {
 			height: 36px;
 
 			path {
-				fill: rgba($white, 0.4);
+				fill: rgba($dark, 0.6);
 				transition: fill 0.2s ease-in;
 			}
 		}
@@ -252,7 +253,7 @@ h5, .h5 {
 		margin-top: 5px;
 
 		span {
-			background-color: rgba($white, 0.4);
+			background-color: rgba($dark, 0.6);
 			display: block;
 			height: 2px;
 			width: 20px;
@@ -294,19 +295,19 @@ h5, .h5 {
 	}
 
 	&.bg-blue {
-		background-color: rgba($blue, 0.9);
+		background-color: rgba($light, 1);
 	}
 	&.bg-christalle {
-		background-color: rgba($christalle, 0.9);
+		background-color: rgba($light, 1);
 	}
 	&.bg-blackberry {
-		background-color: rgba($blackberry, 0.9);
+		background-color: rgba($light, 1);
 	}
 	&.bg-purple {
-		background-color: rgba($purple, 0.9);
+		background-color: rgba($light, 1);
 	}
 	&.bg-brown {
-		background-color: rgba($brown, 0.9);
+		background-color: rgba($light, 1);
 	}
 
 }
@@ -571,11 +572,11 @@ h5, .h5 {
 }
 
 #page1 {
-	background-color: $blue;
+	background-color: $light;
 
 	.main-header {
 		svg path {
-			fill: $blue;
+			fill: $light;
 		}
 	}
 
@@ -583,11 +584,11 @@ h5, .h5 {
 }
 
 #page2 {
-	background-color: $christalle;
+	background-color: $light;
 
 	.main-header {
 		svg path {
-			fill: $christalle;
+			fill: $light;
 		}
 	}
 
@@ -595,11 +596,11 @@ h5, .h5 {
 }
 
 #page3 {
-	background-color: $blackberry;
+	background-color: $light;
 
 	.main-header {
 		svg path {
-			fill: $blackberry;
+			fill: $light;
 		}
 	}
 
@@ -609,11 +610,11 @@ h5, .h5 {
 }
 
 #page4 {
-	background-color: $purple;
+	background-color: $light;
 
 	.main-header {
 		svg path {
-			fill: $purple;
+			fill: $light;
 		}
 	}
 
@@ -623,11 +624,11 @@ h5, .h5 {
 }
 
 #page5 {
-	background-color: $brown;
+	background-color: $light;
 
 	.main-header {
 		svg path {
-			fill: $brown;
+			fill: $light;
 		}
 	}
 

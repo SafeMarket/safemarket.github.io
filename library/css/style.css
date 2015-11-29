@@ -502,20 +502,20 @@ body {
   font-weight: 700;
   line-height: 18px;
   line-height: 1.8rem;
-  color: rgba(255, 255, 255, 0.5);
-  background-color: #333333;
+  color: #2B364A;
+  background-color: #eee;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
 /** Links **/
 a {
-  color: #a84768;
+  color: #2B364A;
   text-decoration: none; }
   a:hover, a:focus {
-    color: #843852;
+    color: #181e2a;
     text-decoration: underline; }
   a:link {
-    -webkit-tap-highlight-color: #843852; }
+    -webkit-tap-highlight-color: #181e2a; }
 
 /** Paragraphs **/
 p {
@@ -594,7 +594,7 @@ h5, .h5 {
     padding-left: 11px;
     padding-left: 1.1rem; }
     .nav li a {
-      color: rgba(255, 255, 255, 0.4);
+      color: rgba(43, 54, 74, 0.8);
       padding-top: 4px;
       padding-top: 0.4rem;
       padding-right: 4px;
@@ -605,7 +605,7 @@ h5, .h5 {
       padding-left: 0.4rem;
       transition: color 0.2s ease-in; }
       .nav li a:hover, .nav li a:focus {
-        color: rgba(255, 255, 255, 0.8);
+        color: #2b364a;
         text-decoration: none; }
     .nav li:first-child {
       padding-left: 0; }
@@ -683,6 +683,7 @@ h5, .h5 {
 
 /** Header Styles **/
 #header {
+  color: #2B364A;
   position: fixed;
   top: -100px;
   left: 0;
@@ -714,7 +715,7 @@ h5, .h5 {
       display: block;
       height: 36px; }
       #header #logo svg path {
-        fill: rgba(255, 255, 255, 0.4);
+        fill: rgba(43, 54, 74, 0.6);
         transition: fill 0.2s ease-in; }
   #header #main-nav {
     display: none;
@@ -737,7 +738,7 @@ h5, .h5 {
     padding: 5px;
     margin-top: 5px; }
     #header .nav-burger span {
-      background-color: rgba(255, 255, 255, 0.4);
+      background-color: rgba(43, 54, 74, 0.6);
       display: block;
       height: 2px;
       width: 20px;
@@ -759,15 +760,15 @@ h5, .h5 {
     z-index: 100;
     top: 0; }
   #header.bg-blue {
-    background-color: rgba(51, 51, 51, 0.9); }
+    background-color: #eeeeee; }
   #header.bg-christalle {
-    background-color: rgba(51, 51, 51, 0.9); }
+    background-color: #eeeeee; }
   #header.bg-blackberry {
-    background-color: rgba(51, 51, 51, 0.9); }
+    background-color: #eeeeee; }
   #header.bg-purple {
-    background-color: rgba(51, 51, 51, 0.9); }
+    background-color: #eeeeee; }
   #header.bg-brown {
-    background-color: rgba(55, 40, 40, 0.9); }
+    background-color: #eeeeee; }
 
 /** Main Styles **/
 #main {
@@ -817,7 +818,7 @@ h5, .h5 {
     margin-left: 9rem; }
 .main-header .main-title {
   text-transform: uppercase;
-  color: #FFF;
+  color: #2B364A;
   margin: 0; }
   .main-header .main-title:after {
     display: block;
@@ -984,35 +985,35 @@ h5, .h5 {
     height: 50px; }
 
 #page1 {
-  background-color: #333333; }
+  background-color: #eee; }
   #page1 .main-header svg path {
-    fill: #333333; }
+    fill: #eee; }
 
 #page2 {
-  background-color: #333; }
+  background-color: #eee; }
   #page2 .main-header svg path {
-    fill: #333; }
+    fill: #eee; }
 
 #page3 {
-  background-color: #333; }
+  background-color: #eee; }
   #page3 .main-header svg path {
-    fill: #333; }
+    fill: #eee; }
   #page3 .main-content {
     max-width: 500px;
     max-width: 50rem; }
 
 #page4 {
-  background-color: #333; }
+  background-color: #eee; }
   #page4 .main-header svg path {
-    fill: #333; }
+    fill: #eee; }
   #page4 .main-content {
     max-width: 500px;
     max-width: 50rem; }
 
 #page5 {
-  background-color: #372828; }
+  background-color: #eee; }
   #page5 .main-header svg path {
-    fill: #372828; }
+    fill: #eee; }
   #page5 .main-content {
     max-width: 550px;
     max-width: 55rem; }

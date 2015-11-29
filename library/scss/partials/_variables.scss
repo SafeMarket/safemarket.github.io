@@ -4,13 +4,15 @@
 $white			: #FFF;
 $gray			: #e8e8e8;
 $black			: #000;
+$light 			: #eee;
+$dark 			: #2B364A;
 
 $peach			: #ecd7db;
 $pink			: #a84768;
-$blue			: #333333;
-$christalle		: #333;
-$blackberry		: #333;
-$purple			: #333;
+$blue			: #eee;
+$christalle		: #eee;
+$blackberry		: #eee;
+$purple			: #eee;
 $brown			: #372828;
 $teal			: #3FB8AF;
 
@@ -34,7 +36,7 @@ $pinkgrad		: $pink1 0%, $pink2 75%;
 
 // Typography
 $main-font		: "montserrat", Helvetica, Arial, sans-serif;
-$header-color	: $white;
-$text-color		: rgba($white, 0.5);
-$link-color		: $pink;
-$link-hover		: darken($pink, 10%);
+$header-color	: $dark;
+$text-color		: $dark;
+$link-color		: $dark;
+$link-hover		: darken($dark, 10%);
