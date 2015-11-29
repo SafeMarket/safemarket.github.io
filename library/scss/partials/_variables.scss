@@ -7,16 +7,30 @@ $black			: #000;
 
 $peach			: #ecd7db;
 $pink			: #a84768;
-$blue			: #035e6e;
-$christalle		: #27205c;
-$blackberry		: #46183E;
-$purple			: #3c1f51;
+$blue			: #333333;
+$christalle		: #333;
+$blackberry		: #333;
+$purple			: #333;
 $brown			: #372828;
+$teal			: #3FB8AF;
 
 $grad1			: #5d1a42;
 $grad2			: #ac0b40;
 $grad3			: #c02340;
 $gradient		: $grad1 0%, $grad2 75%, $grad3 100%;
+
+$teal1			: #3fb8af;
+$teal2			: #3f85b8;
+$tealgrad		: $teal1 0%, $teal2 75%;
+
+$purp1			: #ab0768;
+$purp2			: #9c07ab;
+$purpgrad		: $purp1 0%, $purp2 75%;
+
+$pink1			: #FF3D7F;
+$pink2			: #AB0768;
+$pinkgrad		: $pink1 0%, $pink2 75%;
+
 
 // Typography
 $main-font		: "montserrat", Helvetica, Arial, sans-serif;

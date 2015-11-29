@@ -503,7 +503,7 @@ body {
   line-height: 18px;
   line-height: 1.8rem;
   color: rgba(255, 255, 255, 0.5);
-  background-color: #035e6e;
+  background-color: #333333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -759,13 +759,13 @@ h5, .h5 {
     z-index: 100;
     top: 0; }
   #header.bg-blue {
-    background-color: rgba(3, 94, 110, 0.9); }
+    background-color: rgba(51, 51, 51, 0.9); }
   #header.bg-christalle {
-    background-color: rgba(39, 32, 92, 0.9); }
+    background-color: rgba(51, 51, 51, 0.9); }
   #header.bg-blackberry {
-    background-color: rgba(70, 24, 62, 0.9); }
+    background-color: rgba(51, 51, 51, 0.9); }
   #header.bg-purple {
-    background-color: rgba(60, 31, 81, 0.9); }
+    background-color: rgba(51, 51, 51, 0.9); }
   #header.bg-brown {
     background-color: rgba(55, 40, 40, 0.9); }
 
@@ -984,27 +984,27 @@ h5, .h5 {
     height: 50px; }
 
 #page1 {
-  background-color: #035e6e; }
+  background-color: #333333; }
   #page1 .main-header svg path {
-    fill: #035e6e; }
+    fill: #333333; }
 
 #page2 {
-  background-color: #27205c; }
+  background-color: #333; }
   #page2 .main-header svg path {
-    fill: #27205c; }
+    fill: #333; }
 
 #page3 {
-  background-color: #46183E; }
+  background-color: #333; }
   #page3 .main-header svg path {
-    fill: #46183E; }
+    fill: #333; }
   #page3 .main-content {
     max-width: 500px;
     max-width: 50rem; }
 
 #page4 {
-  background-color: #3c1f51; }
+  background-color: #333; }
   #page4 .main-header svg path {
-    fill: #3c1f51; }
+    fill: #333; }
   #page4 .main-content {
     max-width: 500px;
     max-width: 50rem; }
