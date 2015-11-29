@@ -339,7 +339,7 @@ h5, .h5 {
 		@include width(48);
 		@include height(48);
 		margin: 0 auto;
-		@include margin-bottom(1);
+		@include margin-bottom(3);
 		border-radius: 50%;
 
 		svg {
